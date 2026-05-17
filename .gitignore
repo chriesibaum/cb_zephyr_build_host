@@ -1,0 +1,3 @@
+# SEGGER installers – binary, license-restricted, must not be committed
+segger_tools/*.deb
+segger_tools/*.rpm
