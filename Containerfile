@@ -79,6 +79,10 @@ RUN apt-get update \
       cmake \
       ninja-build \
       ccache \
+        # 32-bit development support for native_sim / -m32 builds
+        gcc-multilib \
+        g++-multilib \
+        libc6-dev-i386 \
       # Python
       python3 \
       python3-pip \

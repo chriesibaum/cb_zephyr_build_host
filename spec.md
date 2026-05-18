@@ -24,7 +24,7 @@ inside the image.
 
 | Category | Packages |
 |---|---|
-| Build tools | `build-essential`, `cmake`, `ninja-build`, `ccache` |
+| Build tools | `build-essential`, `cmake`, `ninja-build`, `ccache`, `gcc-multilib`, `g++-multilib`, `libc6-dev-i386` |
 | Python | `python3`, `python3-venv`, `python3-dev`, `python3-pip`, `python3-setuptools`, `python3-wheel` |
 | Zephyr build deps | `device-tree-compiler`, `dfu-util`, `libsdl2-dev`, `libmagic1` |
 | Debugging / flashing | `openocd`, `gdb-multiarch` |
