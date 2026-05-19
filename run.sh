@@ -86,6 +86,13 @@ if [[ "${FLASH:-1}" == "1" ]]; then
         --device=/dev/bus/usb
         --group-add keep-groups   # preserve host supplementary groups (e.g. plugdev) for USB device access
     )
+    # Also pass through serial tty devices used by board consoles during
+    # Twister device testing (ztest harness reads pass/fail from serial logs).
+    for serial_dev in /dev/ttyACM* /dev/ttyUSB*; do
+        if [[ -e "${serial_dev}" ]]; then
+            RUN_ARGS+=(--device="${serial_dev}")
+        fi
+    done
     # Mount /dev/disk read-only so mbed-ls (used by pyOCD) can resolve
     # /dev/disk/by-id symlinks and suppresses the "Could not get disk devices" warning.
     [[ -d /dev/disk ]] && RUN_ARGS+=(--volume "/dev/disk:/dev/disk:ro")
